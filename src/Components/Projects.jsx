@@ -8,16 +8,16 @@ const Projects = () => {
       name: 'Project 1',
       desc: 'congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed',
       liveLink: 'website url',
-      githubLink: 'https://github.com/',
-      techs: ['HTML', 'CSS', 'TypeScript'],
+      githubLink: 'https://github.com/delavegar25',
+      techs: ['HTML', 'CSS', 'Javascript', 'Vue'],
       isOpenSource: true
     },
     two: {
       name: 'Project 2',
       desc: 'congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed',
       liveLink: 'website url',
-      githubLink: 'https://github.com/',
-      techs: ['React', 'Node', 'MongoDB', 'Socket.io', 'Redux'],
+      githubLink: 'https://github.com/delavegar25',
+      techs: ['HTML/CSS', 'Javascript'],
       isOpenSource: true
     }
   }

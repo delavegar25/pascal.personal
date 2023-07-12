@@ -41,7 +41,7 @@ const Home = () => {
       <div className="home-text">
         <h1>
           <span className='gradientText'>
-            Hi, I'm Lorem!
+            Hi, I'm Pascal!
           </span>
           <span>
             <span onClick={handleChange}>
@@ -55,7 +55,7 @@ const Home = () => {
         <TypeWriterEffect
           cursorColor="#1da1f2"
           multiText={[
-            'Web Developer',
+            'Software Developer',
             "Don't Forget to Scroll"
           ]}
           multiTextLoop={true}

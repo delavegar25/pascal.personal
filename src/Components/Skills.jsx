@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../styles/Skills.css'
 
-import { SiJavascript, SiHtml5, SiCss3, SiReact, SiNodedotjs, SiFigma, SiMongodb, SiFirebase, SiTypescript, SiNextdotjs } from 'react-icons/si'
+import { SiJavascript, SiHtml5, SiCss3, SiReact, SiDjango, SiPython} from 'react-icons/si'
 
 const Skills = () => {
   return (
@@ -12,14 +12,6 @@ const Skills = () => {
         <div className="js">
           <SiJavascript />
           <p>JavaScript</p>
-        </div>
-        <div className="ts">
-          <SiTypescript />
-          <p>TypeScript</p>
-        </div>
-        <div >
-          <SiNextdotjs />
-          <p>Next JS</p>
         </div>
         <div className="html">
           <SiHtml5 />
@@ -33,21 +25,13 @@ const Skills = () => {
           <SiReact />
           <p>React</p>
         </div>
-        <div className="node">
-          <SiNodedotjs />
-          <p>Node JS</p>
+        <div className="python">
+          <SiPython />
+          <p>Python</p>
         </div>
-        <div className="fig">
-          <SiFigma />
-          <p>Figma</p>
-        </div>
-        <div className="mon">
-          <SiMongodb />
-          <p>MongoDB</p>
-        </div>
-        <div className="fire">
-          <SiFirebase />
-          <p>Firebase</p>
+        <div className="django">
+          <SiDjango />
+          <p>Django</p>
         </div>
       </div>
     </div>
