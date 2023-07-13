@@ -6,19 +6,17 @@ const Projects = () => {
   const projectsInfo = {
     one: {
       name: 'Project 1',
-      desc: 'Built a software product on food recipe, which is called The Meal Finder, this meal finder allows you to search for food that you desire',
+      desc: 'Built a software product to find meals online, which is called The Meal Finder, this meal finder allows you to search for food that you desire',
       liveLink: 'website url',
       githubLink: 'https://github.com/delavegar25',
-      techs: ['HTML', 'CSS', 'Javascript'],
-      isOpenSource: true
+      techs: ['HTML', 'CSS', 'Javascript']
     },
     two: {
       name: 'Project 2',
       desc: '',
       liveLink: 'website url',
       githubLink: 'https://github.com/delavegar25',
-      techs: ['HTML/CSS', 'Javascript'],
-      isOpenSource: true
+      techs: ['HTML/CSS', 'Javascript']
     }
   }
   return (

@@ -56,6 +56,7 @@ const Home = () => {
           cursorColor="#1da1f2"
           multiText={[
             'Software Developer',
+            'Open Source Contributor',
             "Don't Forget to Scroll"
           ]}
           multiTextLoop={true}
