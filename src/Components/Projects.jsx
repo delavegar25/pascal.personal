@@ -6,15 +6,15 @@ const Projects = () => {
   const projectsInfo = {
     one: {
       name: 'Project 1',
-      desc: 'congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed',
+      desc: 'Built a software product on food recipe, which is called The Meal Finder, this meal finder allows you to search for food that you desire',
       liveLink: 'website url',
       githubLink: 'https://github.com/delavegar25',
-      techs: ['HTML', 'CSS', 'Javascript', 'Vue'],
+      techs: ['HTML', 'CSS', 'Javascript'],
       isOpenSource: true
     },
     two: {
       name: 'Project 2',
-      desc: 'congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed',
+      desc: '',
       liveLink: 'website url',
       githubLink: 'https://github.com/delavegar25',
       techs: ['HTML/CSS', 'Javascript'],
