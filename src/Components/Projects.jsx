@@ -13,8 +13,8 @@ const Projects = () => {
     },
     two: {
       name: 'Project 2',
-      desc: '',
-      liveLink: 'website url',
+      desc: 'Wikiclone: This is a wikipedia clone and where you can search for words on the web.',
+      liveLink: 'https://wikiclone.vercel.app',
       githubLink: 'https://github.com/delavegar25',
       techs: ['HTML/CSS', 'Javascript']
     }
