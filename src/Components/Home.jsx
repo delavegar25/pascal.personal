@@ -14,7 +14,7 @@ const Home = () => {
   const textContent = useRef();
   const handleDownload = () => {
     saveAs(
-      
+      'https://drive.google.com/file/d/1MnD0s5X9FnF22F-wa1Gept5hGKsZBPUq/view?usp=drive_link',
       'file:///C:/Users/PASCAL/Downloads/OKEREKE-PASCAL-Resume-16-06-2023-21-59-12%20(3).pdf'
     )
   }
