@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
 import '../styles/Mail.css'
 
+import { send } from 'emailjs-com';
+
 const Mail = () => {
   const radio = useRef();
   const [toSend, setToSend] = useState({
@@ -67,6 +69,13 @@ const Mail = () => {
       reset();
     }
   }
+
+  send('SERVICE_ID', 'TEMPLATE_ID', {
+    subject: toSend.subject,
+    name: toSend.name,
+    email: toSend.email,
+    message: toSend.message,
+  },);
 
 
   const handleChange = (e) => {
