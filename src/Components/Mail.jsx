@@ -70,33 +70,32 @@ const Mail = () => {
 //         message: toSend.message,
 //       }, publicKey);
 
- 
-  const emailData = {
-  to_email: 'recipient@example.com',
-  from_email: 'sender@example.com',
-  subject: 'Test Email',
-  message: 'This is a test email sent using Email.js',
-}
-};
 
   emailjs.send(
-  emailjsServiceId,
-  emailjsTemplateId,
-)
-.then((response) => {
-console.log('Email sent successfully', response);
-})
-.catch((error) => {
-console.error('Failed to send email', error);
-}); 
+    emailjsServiceId,
+    emailjsTemplateId, {
+      subject: toSend.subject,
+      name: toSend.name,
+      email: toSend.email,
+      Message: toSend.message,
+    },
+  )
 
+  .then((response) => {
+    console.log("Email sent successfully", response);
+  })
+  .catch((error) => {
+     console.error('Failed to send email:', error);
+  });
       error.current.style.display = 'none'
       reset();
     }
   }
 
 
-
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  }
 
   useEffect(() => {
     const arrayOfSub = ['work', 'chat', 'collaboration']
