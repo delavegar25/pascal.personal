@@ -67,12 +67,8 @@ const Mail = () => {
 //         message: toSend.message,
 //       }, publicKey);
 
-error.current.style.display = 'none'
-reset();
-}
-  }
 
-  
+
   emailjs.send(
     emailjsServiceId,
     emailjsTemplateId, {
@@ -89,7 +85,10 @@ reset();
   .catch((error) => {
      console.error('Failed to send email:', error);
   });
-  
+      error.current.style.display = 'none'
+      reset();
+    }
+  }
 
 
   const handleChange = (e) => {
