@@ -1,7 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
 import '../styles/Mail.css'
+import emailjs from 'emailjs-com';
 
-import { send } from 'emailjs-com';
+
+
+const emailjsTemplateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const emailjsServiceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
 
 const Mail = () => {
   const radio = useRef();
@@ -68,13 +72,6 @@ const Mail = () => {
 
 
 
-    send('SERVICE_ID', 'TEMPLATE_ID', {
-    subject: toSend.subject,
-    name: toSend.name,
-    email: toSend.email,
-    message: toSend.message,
-    },);
-
       error.current.style.display = 'none'
       reset();
     }
@@ -84,7 +81,24 @@ const Mail = () => {
   const handleChange = (e) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
 
+    const emailData = {
+      to_email: 'recipient@example.com',
+      from_email: 'sender@example.com',
+      subject: 'Test Email',
+      message: 'This is a test email sent using Email.js',
+    }
   };
+
+  emailjs.send(
+    emailjsServiceId,
+    emailjsTemplateId,
+  )
+  .then((response) => {
+    console.log('Email sent successfully', response);
+  })
+  .catch((error) => {
+    console.error('Failed to send email', error);
+  });
 
   useEffect(() => {
     const arrayOfSub = ['work', 'chat', 'collaboration']
