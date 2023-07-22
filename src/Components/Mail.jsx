@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import '../styles/Mail.css'
 
-import {emailjs} from 'emailjs-com';
-
 const Mail = () => {
   const radio = useRef();
   const [toSend, setToSend] = useState({
@@ -46,12 +44,6 @@ const Mail = () => {
 
 
  
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID',)
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-       console.log('FAILED...', error);
-    });
 
   const handleClick = () => {
     validation(toSend.email, toSend.name, toSend.message, toSend.subject);
