@@ -3,6 +3,13 @@ import '../styles/Mail.css'
 
 import { send } from 'emailjs-com';
 
+require('dotenv').config();
+const emailjsUserId = process.env.EMAILJS_USERID;
+const emailjsTemplateId = process.env.EMAILJS_TEMPLATEID;
+const emailjsServiceId = process.env.EMAILJS_SERVICEID;
+
+
+
 const Mail = () => {
   const radio = useRef();
   const [toSend, setToSend] = useState({
