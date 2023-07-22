@@ -54,6 +54,10 @@ const Mail = () => {
   const handleClick = () => {
     validation(toSend.email, toSend.name, toSend.message, toSend.subject);
     const condition = Object.values(valid).every((value) => value === true)
+    console.log('Sending Message:', toSend);
+
+    setToSend('');
+    
     if (!condition) {
       error.current.style.display = 'block'
     } else {
