@@ -82,7 +82,7 @@ const Mail = () => {
     } else {
       if (!(arrayOfSub.includes(toSend.subject))) {
         radio.current.checked = false;
-        setIsDisabled(true)
+        setIsDisabled(false)
       }
     }
   }, [toSend.subject])
