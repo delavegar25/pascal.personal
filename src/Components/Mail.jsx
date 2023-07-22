@@ -94,7 +94,7 @@ const Mail = () => {
     } else {
       if (!(arrayOfSub.includes(toSend.subject))) {
         radio.current.checked = false;
-        setIsDisabled(false)
+        setIsDisabled(true)
       }
     }
   }, [toSend.subject])
@@ -106,11 +106,11 @@ const Mail = () => {
         <div className='entry'>
           <div>
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" autoComplete='off' value={toSend.name} onChange={handleChange} />
+            <input type="text" name="name" autoComplete='on' value={toSend.name} onChange={handleChange} />
           </div>
           <div>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" autoComplete='off' value={toSend.email} onChange={handleChange} />
+            <input type="email" name="email" autoComplete='on' value={toSend.email} onChange={handleChange} />
           </div>
           <div className='options'>
             <div>
@@ -153,7 +153,7 @@ const Mail = () => {
               <label htmlFor="chat">Coffee Chat</label>
             </div>
             <div>
-              <input type="text" name="subject" id='other' placeholder='Other' autoComplete='off' onChange={handleChange} />
+              <input type="text" name="subject" id='other' placeholder='Other' autoComplete='on' onChange={handleChange} />
             </div>
           </div>
           <div>
