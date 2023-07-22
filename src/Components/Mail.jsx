@@ -65,17 +65,22 @@ const Mail = () => {
 //         email: toSend.email,
 //         message: toSend.message,
 //       }, publicKey);
+
+
+
+    send('SERVICE_ID', 'TEMPLATE_ID', {
+    subject: toSend.subject,
+    name: toSend.name,
+    email: toSend.email,
+    message: toSend.message,
+    },);
+
       error.current.style.display = 'none'
       reset();
     }
   }
 
-  send('SERVICE_ID', 'TEMPLATE_ID', {
-    subject: toSend.subject,
-    name: toSend.name,
-    email: toSend.email,
-    message: toSend.message,
-  },);
+
 
 
   const handleChange = (e) => {
