@@ -7,6 +7,7 @@ import { animateScroll } from 'react-scroll';
 import { saveAs } from "file-saver";
 import { Link } from 'react-scroll';
 
+
 const Home = () => {
   const [number, setNumber] = useState(0);
   const arrayOfWords = ['Tap again', 'Helllo', 'You found this', 'I added this...', 'because it seemed cool', `so here's something`, 'did you know that...', `You can't breathe and talk.`, 'the earth is 71% water.', `It snows in the Sahara Desert
@@ -14,8 +15,7 @@ const Home = () => {
   const textContent = useRef();
   const handleDownload = () => {
     saveAs(
-      'https://drive.google.com/file/d/1MnD0s5X9FnF22F-wa1Gept5hGKsZBPUq/view?usp=drive_link',
-      'file:///C:/Users/PASCAL/Downloads/OKEREKE-PASCAL-Resume-16-06-2023-21-59-12%20(3).pdf'
+      'https://drive.google.com/uc?export=download&id=file/d/1MnD0s5X9FnF22F-wa1Gept5hGKsZBPUq/view?usp=drive_link'
     )
   }
 
