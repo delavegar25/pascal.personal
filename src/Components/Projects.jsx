@@ -6,10 +6,10 @@ const Projects = () => {
   const projectsInfo = {
     one: {
       name: 'Project 1',
-      desc: 'Built a software product to find meals online, which is called The Meal Finder, this meal finder allows you to search for food that you desire',
-      liveLink: 'website url',
+      desc: 'Pascals recipe',
+      liveLink: 'https://pascal-recipe.vercel.app',
       githubLink: 'https://github.com/delavegar25',
-      techs: ['HTML', 'CSS', 'Javascript']
+      techs: ['HTML', 'CSS', 'Javascript', 'Vue']
     },
     two: {
       name: 'Project 2',
