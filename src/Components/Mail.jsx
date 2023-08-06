@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
 import '../styles/Mail.css'
-import Image from 'next/image';
-import Links from 'links';
 
 const Mail = () => {
   const radio = useRef();
@@ -154,14 +152,6 @@ const Mail = () => {
     </div>
   )
 }
-
-<Links>
-<h2>OR <br /> <span style={{ color: '#D76427' }}>REACH  OUT VIA</span></h2>
-<div>
-  <a href='whatsapp://send?phone=+23409028589617' target='_blank'><Image src='whatsapp.png' alt='' height={50} width={50} /></a>
-  <a href='mailto:pascalokereke18@gmail.com' target='_blank'><Image src='mail.png' alt='' height={50} width={50} /></a>
-</div>
-</Links>
 
 
 export default Mail
