@@ -146,7 +146,7 @@ const Mail = () => {
             <label htmlFor="message">Message</label>
             <textarea name="message" cols="30" rows="10" value={toSend.message} onChange={handleChange}></textarea>
           </div>
-          <button type='submit' onClick={handleClick}>Send Message</button>
+          <div className='btn' onClick={handleClick}>Send Message</div>
         </div>
       </div>
     </div>
