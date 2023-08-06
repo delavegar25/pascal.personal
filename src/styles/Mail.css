@@ -148,6 +148,17 @@
 	color: #fff;
 }
 
+img {
+    border-radius: 50%;
+
+}
+img:hover{
+        border: 2px solid #ffffff;
+        opacity: 70%;
+        transition: all 0.2s;
+        box-shadow: 1px 1px 7px 2px rgba(255, 255, 255, 0.917);
+}
+
 @media only screen and (max-width: 600px) {
 	:root {
 		--input-width: 97%;
