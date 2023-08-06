@@ -1,11 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import '../styles/Mail.css'
-import emailjs from 'emailjs-com';
-
-
-
-const emailjsTemplateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-const emailjsServiceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+import Image from 'next/image';
+import Links from 'links';
 
 const Mail = () => {
   const radio = useRef();
@@ -68,27 +64,11 @@ const Mail = () => {
 //       }, publicKey);
 
 
-
-  emailjs.send(
-    emailjsServiceId,
-    emailjsTemplateId, {
-      subject: toSend.subject,
-      name: toSend.name,
-      email: toSend.email,
-      Message: toSend.message,
-    },
-  )
-
-  .then((response) => {
-    console.log("Email sent successfully", response);
-  })
-  .catch((error) => {
-     console.error('Failed to send email:', error);
-  });
       error.current.style.display = 'none'
       reset();
     }
   }
+
 
 
   const handleChange = (e) => {
@@ -168,12 +148,20 @@ const Mail = () => {
             <label htmlFor="message">Message</label>
             <textarea name="message" cols="30" rows="10" value={toSend.message} onChange={handleChange}></textarea>
           </div>
-          <p style={{ color: 'red !important', display: 'none' }} ref={error}>Something is missing</p>
-          <div className='btn' onClick={handleClick}>Send Message</div>
+          <button type='submit' onClick={handleClick}>Send Message</button>
         </div>
       </div>
     </div>
   )
 }
+
+<Links>
+<h2>OR <br /> <span style={{ color: '#D76427' }}>REACH  OUT VIA</span></h2>
+<div>
+  <a href='whatsapp://send?phone=+23409028589617' target='_blank'><Image src='whatsapp.png' alt='' height={50} width={50} /></a>
+  <a href='mailto:pascalokereke18@gmail.com' target='_blank'><Image src='mail.png' alt='' height={50} width={50} /></a>
+</div>
+</Links>
+
 
 export default Mail
