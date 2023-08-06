@@ -1,185 +1,168 @@
-"use client"
-import React, { Fragment, useContext, useRef, useState } from 'react';
-import { styled } from 'styled-components';
-import textContext from './ContextProvider';
-import Image from 'next/image';
-import axios from 'axios';
+import React, { useState, useRef, useEffect } from 'react'
+import '../styles/Mail.css'
 
-export default function Contact() {
-    const ctx = useContext(textContext);
-    const ref = useRef();
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
 
-    ctx.click === 'contactscroll' && ref.current?.scrollIntoView({ behavior: 'smooth' });
+const Mail = () => {
+  const radio = useRef();
+  const [toSend, setToSend] = useState({
+    subject: '',
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isDisabled, setIsDisabled] = useState(false);
+  const valid = {
+    email: false,
+    rest: false
+  }
+  const error = useRef()
 
-    const submitform = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post(
-                'https://submit-form.com/aMYO3Q2E',
-                {
-                    name: name,
-                    email: email,
-                    message: message,
-                }
-            );
-            console.log(response.data);
-        } catch (error) {
-            console.log(error);
-        }
-        setName('');
-        setEmail('');
-        setMessage('');
+  const validation = (email, name, message, subject) => {
+    const acceptedEmail = ['gmail.com', 'yahoo.com', 'yahoo.co.in', 'outlook.com', 'protonmail.com', 'aol.com', 'icloud.com', 'me.com', 'mac.com', 'gmx.com', 'hey.com']
+    if (email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+      acceptedEmail.includes(email.split('@')[1]) ?
+        valid.email = true : valid.email = false
+    } else {
+      valid.email = false;
     }
 
-    return (
-        <Fragment>
-            <Hire ref={ref}>
-                <h1>Hire Me<span>()</span></h1>
-    
-                <Form
-                    onSubmit={submitform}
-                    action="https://submit-form.com/aMYO3Q2E"
-                >
-                    <input
-                        placeholder='Name'
-                        type="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                    <input
-                        placeholder='Your email address'
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <input
-                        placeholder='Please enter your message...'
-                        type="textarea"
-                        id="msg"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-
-                    />
-                    <button type='submit'>Send</button>
-                </Form>
-
-                <Links>
-                    <h2>OR <br /> <span style={{ color: '#D76427' }}>REACH OUT VIA</span></h2>
-                    <div>
-                        <a href='whatsapp://send?phone=+2349028589617' target='_blank' rel="noreferrer"><Image src='/watsapp.png' alt='' height={50} width={50} /></a>
-                        <a href='mailto:pascalokereke18@gmail.com' target='_blank' rel="noreferrer"><Image src='/mail.png' alt='' height={50} width={50} /></a>
-                    </div>
-                </Links>
-            </Hire>
-        </Fragment>
-    )
-}
-const Links = styled.div`
-h2 {
-    font-size: 3rem;
-    font-weight: normal;
-    letter-spacing: 0.2rem;
-    margin: 5rem 0 3rem 0;
-}
-div {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin-bottom: 5rem;
-}
-img {
-    border-radius: 50%;
-
-}
-img:hover{
-        border: 2px solid #ffffff;
-        opacity: 70%;
-        transition: all 0.2s;
-        box-shadow: 1px 1px 7px 2px rgba(255, 255, 255, 0.917);
+    if (name !== '' && subject !== '' && message.length > 100) {
+      valid.rest = true;
+      console.log('here')
+    } else {
+      valid.rest = false;
     }
-`;
-
-const Form = styled.form`
-width: 50rem;
-margin: auto;
-display: grid;
-grid-gap: 4rem;
-
-@media(max-width:480px) {
-    width: 35rem;
-}
-input{
-    border: none;
-    background-color: #00000000;
-    height: 4rem;
-    margin-top: 5rem;
-    font-size: 2rem;
-    padding: 0 0 1rem 1.5rem;
-    font-family: 'Roboto Mono', monospace;
-    border-bottom: 4px solid #62dbfcdd;
-}
-#msg {
-    border: 4px solid #62dbfcdd;
-    height: 20rem;
-    border-radius: 1rem;
-    padding-bottom: 12rem;
-}
-button {
-    width: auto;
-    padding: 1rem 3rem;
-    margin: -1rem 0 0 auto;
-    background-color: #D76427;
-    border: 1px solid white;
-    border-radius: 1rem;
-    color: white;
-    @media(max-width:480px) {
-        width: 100%;
-}
-}
-button:hover {
-    border: 1px solid white;
-    transition: background-color 0.5s;
-    background-color: rgba(2,37,62, 0.61);
-}
-
-`;
-const Hire = styled.div`
-  padding: 5% 10% 4% 10%;
-  width: 100vw;
-  background-image: url('/herodark1.jpg');
-  background-repeat: repeat;
-  background-size: cover;
-  background-attachment: fixed;
-
-  @media(max-width:480px){
-    background-image: url('/herodark.png');
-    /* background-size: auto; */
-    background-attachment: scroll;
   }
-h1 {
-  font-size: 5rem;
-  color: #62dbfc; 
-  @media(max-width:480px){
-    padding-top: 3rem;
+
+  const reset = () => {
+    setToSend({
+      subject: '',
+      name: '',
+      email: '',
+      message: ''
+    })
   }
+
+
+ 
+
+  const handleClick = () => {
+    validation(toSend.email, toSend.name, toSend.message, toSend.subject);
+    const condition = Object.values(valid).every((value) => value === true)
+ 
+    if (!condition) {
+      error.current.style.display = 'block'
+    } else {
+//       Using email.js to send emails https://www.emailjs.com/docs/sdk/installation/
+//       use .env to store ids and keys from email.js
+//       send(serviceID, templateID, {
+//         subject: toSend.subject,
+//         name: toSend.name,
+//         email: toSend.email,
+//         message: toSend.message,
+//       }, publicKey);
+
+    const serviceID = 'YOUR_SERVICE_ID';
+    const templateID = 'YOUR_TEMPLATE_ID';
+
+    toSend(serviceID, templateID, {
+      subject: toSend.subject,
+      name: toSend.name,
+      email: toSend.email,
+      message: toSend.message,
+     },)
+
+      error.current.style.display = 'none'
+      reset();
+    }
+  }
+
+
+
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  }
+
+  useEffect(() => {
+    const arrayOfSub = ['work', 'chat', 'collaboration']
+    if (toSend.subject === '') {
+      setIsDisabled(false)
+    } else {
+      if (!(arrayOfSub.includes(toSend.subject))) {
+        radio.current.checked = false;
+        setIsDisabled(true)
+      }
+    }
+  }, [toSend.subject])
+
+  return (
+    <div className='mail' id='mail'>
+      <h2>Get In Touch</h2>
+      <div>
+        <div className='entry'>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" autoComplete='off' value={toSend.name} onChange={handleChange} />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" autoComplete='off' value={toSend.email} onChange={handleChange} />
+          </div>
+          <div className='options'>
+            <div>
+              <input
+                type="radio"
+                name="subject"
+                value='work'
+                id="work"
+                checked={toSend.subject === 'work'}
+                onChange={handleChange}
+                ref={radio}
+                disabled={isDisabled}
+              />
+              <label htmlFor="work">Work</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="subject"
+                value="collaboration"
+                id="collaboration"
+                checked={toSend.subject === 'collaboration'}
+                onChange={handleChange}
+                ref={radio}
+                disabled={isDisabled}
+              />
+              <label htmlFor="collaboration">Collaboration</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="subject"
+                value="chat"
+                id='chat'
+                checked={toSend.subject === 'chat'}
+                onChange={handleChange}
+                ref={radio}
+                disabled={isDisabled}
+              />
+              <label htmlFor="chat">Coffee Chat</label>
+            </div>
+            <div>
+              <input type="text" name="subject" id='other' placeholder='Other' autoComplete='off' onChange={handleChange} />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="message">Message</label>
+            <textarea name="message" cols="30" rows="10" value={toSend.message} onChange={handleChange}></textarea>
+          </div>
+          <div className='btn' onClick={handleClick}>Send Message</div>
+
+        </div>
+      </div>
+    </div>
+  )
 }
-#subhead{
-    font-size: 3rem;
-letter-spacing: 0.2rem;
-margin: 5rem 0;
-@media(max-width:480px) {
-    font-size: 2.2rem;
-    margin-top: 3rem;
-}
-}
-footer {
-    position: relative;
-    bottom: 0;
-    padding: 5rem 0 0 0;
-    font-size: 1.3rem;
-    font-family: Source Code Pro;
-}
-`;
+
+
+export default Mail;
