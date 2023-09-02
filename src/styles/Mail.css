@@ -159,6 +159,23 @@ img:hover{
         box-shadow: 1px 1px 7px 2px rgba(255, 255, 255, 0.917);
 }
 
+.footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+.whatsapp-link {
+	color: #25d366;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.whatsapp-link:hover {
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 600px) {
 	:root {
 		--input-width: 97%;

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, } from 'react'
 import '../styles/Mail.css'
 
 
@@ -62,6 +62,9 @@ const Mail = () => {
 //         message: toSend.message,
 //       }, publicKey);
 
+
+// where i stopped 
+
     const serviceID = 'YOUR_SERVICE_ID';
     const templateID = 'YOUR_TEMPLATE_ID';
 
@@ -94,6 +97,19 @@ const Mail = () => {
       }
     }
   }, [toSend.subject])
+
+
+function Footer() {
+  const whatsappLink = 'https://wa.me/+2349028589617';
+  return (
+    <footer className='footer'>
+    {/* Whatsapp message link */}
+    <a href={whatsappLink} className='whatsapp-link' target="_blank" rel="noopener noreferrer">
+     Send me a Whatsapp message
+    </a>
+ </footer>
+  )
+}
 
   return (
     <div className='mail' id='mail'>
@@ -157,7 +173,6 @@ const Mail = () => {
             <textarea name="message" cols="30" rows="10" value={toSend.message} onChange={handleChange}></textarea>
           </div>
           <div className='btn' onClick={handleClick}>Send Message</div>
-
         </div>
       </div>
     </div>
