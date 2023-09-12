@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, } from 'react'
 import '../styles/Mail.css'
-import Footer from './Footer'
+
 
 const Mail = () => {
   const radio = useRef();
@@ -163,7 +163,6 @@ const Mail = () => {
             <textarea name="message" cols="30" rows="10" value={toSend.message} onChange={handleChange}></textarea>
           </div>
           <div className='btn' onClick={handleClick}>Send Message</div>
-          <Footer/>
         </div>
       </div>
     </div>
