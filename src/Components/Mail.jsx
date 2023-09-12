@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, } from 'react'
 import '../styles/Mail.css'
-
+import Footer from './Footer'
 
 const Mail = () => {
   const radio = useRef();
@@ -99,17 +99,7 @@ const Mail = () => {
   }, [toSend.subject])
 
 
-function Footer() {
-  const whatsappLink = 'https://wa.me/+2349028589617';
-  return (
-    <footer className='footer'>
-    {/* Whatsapp message link */}
-    <a href={whatsappLink} className='whatsapp-link' target="_blank" rel="noopener noreferrer">
-     Send me a Whatsapp message
-    </a>
- </footer>
-  )
-}
+
 
   return (
     <div className='mail' id='mail'>
@@ -173,6 +163,7 @@ function Footer() {
             <textarea name="message" cols="30" rows="10" value={toSend.message} onChange={handleChange}></textarea>
           </div>
           <div className='btn' onClick={handleClick}>Send Message</div>
+          <Footer/>
         </div>
       </div>
     </div>
