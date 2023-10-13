@@ -24,6 +24,7 @@ const Socials = () => {
           <p>Linkedin</p>
           <a href="https://linkedin.com/in/Okereke-pascal-72900724a" target='_blank' rel='noreferrer'>Let's Connect</a>
         </div>
+       
       </div>
     </div>
   )

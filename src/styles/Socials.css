@@ -78,6 +78,8 @@
 	--social-main-color: rgb(0, 119, 181);
 }
 
+
+
 @media only screen and (max-width: 386px) {
 	:root {
 		--social-size: 180px;
