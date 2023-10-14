@@ -24,7 +24,7 @@ const Socials = () => {
           <p>Linkedin</p>
           <a href="https://linkedin.com/in/Okereke-pascal-72900724a" target='_blank' rel='noreferrer'>Let's Connect</a>
         </div>
-        <div className='link'>
+        <div className='medium'>
           <AiFillMediumSquare />
           <p>Medium</p>
           <a href="https://medium.com/@pascalokereke18.com" target='_blank' rel='noreferrer'>Let's Connect</a>
