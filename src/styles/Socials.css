@@ -79,7 +79,7 @@
 }
 
 .medium {
-	color: black;
+	--social-main-color: rgb(255, 0, 0);
 }
 
 
