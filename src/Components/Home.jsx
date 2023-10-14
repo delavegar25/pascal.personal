@@ -65,7 +65,7 @@ const Home = () => {
         />
         <div className="btns">
           <Link className='btn1' activeClass="active" to="mail" spy={true} smooth={true} offset={0} duration={500}>
-            Welcome!
+            Welcome
           </Link>
 
           <div onClick={handleDownload} className='btn2'>View Resume</div>
