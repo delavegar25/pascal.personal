@@ -17,8 +17,8 @@ const About = () => {
     <div className='about' id="about">
       <h2>Get To Know Me</h2>
       <div className="words">
-      Hello there, I'm Okereke Pascal and i'm a software developer that solve real life problems, 
-      build projects and contribute to open source. 
+      Hello there, I'm Okereke Pascal and i'm a software developer and a technical writer that solve real life problems, 
+      build amazing projects and contribute to open source. 
       </div>
     </div>
   )
