@@ -17,6 +17,14 @@ const Projects = () => {
       liveLink: 'https://dashboard-link-lake.vercel.app',
       githubLink: 'https://github.com/delavegar25',
       techs: ['HTML/CSS', 'Javascript']
+    },
+
+    three: {
+      name: 'Project 3',
+      desc: 'Bethel-church',
+      liveLink: 'https://bethel-church.vercel.app',
+      githubLink: 'https://github.com/delavegar25',
+      techs: ['HTML/CSS', 'Javascript']
     }
   }
   return (
