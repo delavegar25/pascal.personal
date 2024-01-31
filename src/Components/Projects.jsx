@@ -13,8 +13,15 @@ const Projects = () => {
     },
     two: {
       name: 'Project 2',
-      desc: 'Wikiclone: This is a wikipedia clone and where you can search for words on the web.',
-      liveLink: 'https://wikiclone.vercel.app',
+      desc: 'Shopify Dashboard',
+      liveLink: 'https://dashboard-link-lake.vercel.app',
+      githubLink: 'https://github.com/delavegar25',
+      techs: ['HTML/CSS', 'Javascript']
+    },
+    three: {
+      name: 'Project 3',
+      desc: 'Bethel-church',
+      liveLink: 'https://bethel-church.vercel.app',
       githubLink: 'https://github.com/delavegar25',
       techs: ['HTML/CSS', 'Javascript']
     }
