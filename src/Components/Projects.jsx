@@ -9,7 +9,7 @@ const Projects = () => {
       desc: 'Bethel-church',
       liveLink: 'https://bethel-church.vercel.app',
       githubLink: 'https://github.com/delavegar25',
-      techs: ['Vue']
+      techs: ['HTML/CSS', 'Javascript']
     },
      two: {
       name: 'Project 2',
