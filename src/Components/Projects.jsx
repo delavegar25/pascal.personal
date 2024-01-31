@@ -6,8 +6,8 @@ const Projects = () => {
   const projectsInfo = {
     one: {
       name: 'Project 1',
-      desc: 'Pascals recipe',
-      liveLink: 'https://pascal-recipe.vercel.app',
+      desc: 'Bethel-church',
+      liveLink: 'https://bethel-church.vercel.app',
       githubLink: 'https://github.com/delavegar25',
       techs: ['Vue']
     },
@@ -20,10 +20,10 @@ const Projects = () => {
     },
     three: {
       name: 'Project 3',
-      desc: 'Bethel-church',
-      liveLink: 'https://bethel-church.vercel.app',
+      desc: 'Pascals recipe',
+      liveLink: 'https://pascal-recipe.vercel.app',
       githubLink: 'https://github.com/delavegar25',
-      techs: ['HTML/CSS', 'Javascript']
+      techs: ['Vue']
     }
   }
   return (
