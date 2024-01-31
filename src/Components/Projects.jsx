@@ -11,7 +11,7 @@ const Projects = () => {
       githubLink: 'https://github.com/delavegar25',
       techs: ['Vue']
     },
-    two: {
+     two: {
       name: 'Project 2',
       desc: 'Wikiclone: This is a wikipedia clone and where you can search for words on the web.',
       liveLink: 'https://wikiclone.vercel.app',
