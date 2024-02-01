@@ -32,6 +32,7 @@ const Projects = () => {
       <div>
         <Project info={projectsInfo.one} />
         <Project info={projectsInfo.two} />
+        <Project info={projectsInfo.three} />
       </div>
     </div>
   )
