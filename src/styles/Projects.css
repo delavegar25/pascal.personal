@@ -11,3 +11,10 @@
 	flex-wrap: wrap;
 	margin-bottom: 2rem;
 }
+
+.Projects > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+}
