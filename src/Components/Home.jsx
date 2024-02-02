@@ -57,6 +57,7 @@ const Home = () => {
           multiText={[
             'Software Developer',
             'Open Source Contributor',
+            'Technical Writer',
             "Don't Forget to Scroll"
           ]}
           multiTextLoop={true}
